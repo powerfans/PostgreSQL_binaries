@@ -5,7 +5,7 @@ Based on PostgreSQL Community Source，build and verify  tarball/ RPM binaries f
 本仓库从社区下载PostgreSQL主流源码版本，维护PostgreSQL on Power上经过优化、验证的编译脚本， 并通过Tags/Releases中提供编译好的二进制RPM或者TARBALL 软件包.
  
 # 示例
-* [scripts/src/12.5/GET_SOURCE.links.sh](https://github.com/DBres4Power/PostgreSQL_binaries/blob/main/scripts/src/12.5/GET_SOURCE.links.sh) ，内容是从何处下载的PostgreSQL 12.5源码
+* [scripts/src/12.5/GET_SOURCE.links.sh](https://github.com/DBres4Power/PostgreSQL_binaries/blob/main/scripts/src/12.5/GET_SOURCE.links.sh) ，内容是下载PostgreSQL 12.5源码的链接
  
 * [scripts/build_on_rhel7_by_devtoolset/12.5/README.BUILD.RPMS.txt](https://github.com/DBres4Power/PostgreSQL_binaries/blob/main/scripts/build_on_rhel7_by_devtoolset/12.5/README.BUILD.RPMS.txt) 采用devtoolset gcc编译PostgreSQL 12.5二进制RPM包的过程
 
