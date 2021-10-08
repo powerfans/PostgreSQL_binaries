@@ -38,7 +38,6 @@ gcc (GCC) 7.4.1 20191016 (Advance-Toolchain-at11.0) [revision 277075]
 # sed -i 's/pgdg-srpm-macros//g' postgresql-11.spec
 # rpmbuild -v -bb postgresql-11.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' --define='atpath /opt/at11.0' --define='atstring at11.0' 2>&1 | tee build.log
 
-
-
+# cd /root/rpmbuild/RPMS/ppc64le; tar zcf postgresql11-11.10-1PGDG.el7a.ppc64le_at11gcc_RPMS.tar.gz *.rpm
 
 

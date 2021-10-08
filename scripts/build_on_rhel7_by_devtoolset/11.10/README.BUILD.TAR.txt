@@ -17,7 +17,7 @@ ppc64le
 Install dependencies
 # yum -y install jemalloc jemalloc-devel cmake3 make bison zlib-devel bzip2-devel bzip2 libevent libevent-devel \
    libcurl-devel apr-devel libxslt-devel libxml2-devel  openssl-devel pam-devel krb5-devel  perl perl-devel flex \
-   openldap-devel bison python3 python3-devel readline-devel ncurses-devel lz4 lz4-devel \
+   openldap-devel bison python3 python3-devel readline-devel ncurses-devel lz4 lz4-devel docbook-dtds docbook-style-xsl \
    clang clang-devel libicu libicu-devel libevent-devel libaio-devel libtirpc-devel uuid libuuid libuuid-devel uuid-devel \
    java-1.8.0-openjdk java-1.8.0-openjdk-devel numad numactl-devel git iotop dstat perf
 
