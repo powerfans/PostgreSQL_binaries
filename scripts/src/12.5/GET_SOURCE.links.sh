@@ -3,7 +3,7 @@
 ### https://https://yum.postgresql.org/srpm-packages/
 
 ##1.TAR source
-wget -c https://ftp.postgresql.org/pub/source/v12.5/postgresql-12.5.tar.gz
+wget -c https://ftp.postgresql.org/pub/source/v12.5/postgresql-12.5.tar.gz --no-check-certificate
 
 ##2. SRC RPM
 wget -c https://yum.postgresql.org/srpms/12/redhat/rhel-7-ppc64le/postgresql12-12.5-1PGDG.rhel7.src.rpm
