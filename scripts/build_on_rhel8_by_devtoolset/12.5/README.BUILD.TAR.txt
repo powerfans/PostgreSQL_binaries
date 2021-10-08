@@ -1,4 +1,4 @@
-Build on K1 Power9 Linux, RedHat 7.6 (Kernel 4.14.0-115.8.1.el7a.ppc64le) with devtoolset-7.
+Build on K1 Power9 Linux, RedHat 8.3 (Kernel 4.18.0-240.el8.ppc64le) with devtoolset-9.
 
 ### 1. About Build ENV #########################################################################################
 
@@ -7,7 +7,7 @@ Architecture:          ppc64le
 Model name:            POWER9 (architected), altivec supported
 
 # uname -r
-4.14.0-115.8.1.el7a.ppc64le
+4.18.0-240.el8.ppc64le
 
 # uname -m
 ppc64le
@@ -17,15 +17,9 @@ ppc64le
 Install dependencies
 # yum -y install jemalloc jemalloc-devel cmake3 make bison zlib-devel bzip2-devel bzip2 libevent libevent-devel \
    libcurl-devel apr-devel libxslt-devel libxml2-devel  openssl-devel pam-devel krb5-devel  perl perl-devel flex \
-<<<<<<< HEAD
    openldap-devel bison perl-ExtUtils-Embed python python-devel python3 python3-devel readline-devel ncurses-devel lz4 lz4-devel \
    clang clang-devel libicu libicu-devel libevent-devel libaio-devel libtirpc-devel \
    java-1.8.0-openjdk java-1.8.0-openjdk-devel numad numactl-devel nmon wget git iotop dstat perf
-=======
-   openldap-devel bison python3 python3-devel readline-devel ncurses-devel lz4 lz4-devel \
-   clang clang-devel libicu libicu-devel libevent-devel libaio-devel libtirpc-devel uuid libuuid libuuid-devel uuid-devel \
-   java-1.8.0-openjdk java-1.8.0-openjdk-devel numad numactl-devel git iotop dstat perf
->>>>>>> main
 
 Install devtoolset-7
 # yum install devtoolset-7
@@ -45,7 +39,7 @@ CXXFLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
 CPPFLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
 LDFLAGS='-ljemalloc ' \
 ./configure --prefix=/opt/postgres/12.5 \
-     --with-blocksize=8 --with-segsize=1 --with-wal-blocksize=8 --with-openssl --with-uuid=ossp --with-libxml --with-libxslt \
+     --with-blocksize=8 --with-segsize=1 --with-wal-blocksize=8 --with-openssl --with-uuid=ossp --with-libxml --with-libxslt  \
 2>&1 |tee config.log
 
 make -j32 && make install

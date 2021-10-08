@@ -3,7 +3,7 @@
 ### https://https://yum.postgresql.org/srpm-packages/
 
 ##1.TAR source
-wget -c https://ftp.postgresql.org/pub/source/v11.10/postgresql-11.10.tar.gz
+wget -c https://ftp.postgresql.org/pub/source/v11.10/postgresql-11.10.tar.gz --no-check-certificate
 
 ##2. SRC RPM
 wget -c https://yum.postgresql.org/srpms/11/redhat/rhel-7-ppc64le/postgresql11-11.10-1PGDG.rhel7.src.rpm 
