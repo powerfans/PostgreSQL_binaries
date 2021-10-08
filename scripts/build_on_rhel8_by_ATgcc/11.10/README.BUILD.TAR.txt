@@ -39,7 +39,7 @@ CXXFLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
 CPPLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
 LDFLAGS='-ljemalloc ' \
 ./configure --prefix=/opt/postgres_at/11.10 \
-     --with-blocksize=8 --with-segsize=1 --with-wal-blocksize=8 \
+     --with-blocksize=8 --with-segsize=1 --with-wal-blocksize=8 --with-openssl --with-uuid=ossp --with-libxml --with-libxslt \
 2>&1 |tee config.log
 
 make -j32 && make install
