@@ -45,6 +45,6 @@ gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
 # sed -i 's/.*advance-toolchain.*//g; s/pgdg-srpm-macros//g' postgresql-11.spec
 # rpmbuild -v -bb postgresql-11.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' --define='devtoolsetpath /opt/rh/devtoolset-7/root/usr' 2>&1 | tee build.log
 
-
+# cd /root/rpmbuild/RPMS/ppc64le; tar zcf postgresql11-11.10-1PGDG.el7a.ppc64le_RPMS.tar.gz *.rpm
 
 
