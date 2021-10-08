@@ -1,4 +1,4 @@
-Build on K1 Power9 Linux, RedHat 7.6 (Kernel 4.14.0-115.8.1.el7a.ppc64le) with devtoolset-7.
+Build on K1 Power9 Linux, RedHat 8.4 (Kernel 4.18.0-305.el8.ppc64le) with devtoolset-10.
 
 ### 1. About Build ENV #########################################################################################
 
@@ -7,7 +7,7 @@ Architecture:          ppc64le
 Model name:            POWER9 (architected), altivec supported
 
 # uname -r
-4.14.0-115.8.1.el7a.ppc64le
+4.18.0-305.el8.ppc64le
 
 # uname -m
 ppc64le
@@ -15,19 +15,19 @@ ppc64le
 ### 2. Build postgres ##########################################################################################
 
 Install dependencies
-# yum -y install jemalloc jemalloc-devel cmake3 make bison zlib-devel bzip2-devel bzip2 libevent libevent-devel \
-   libcurl-devel apr-devel libxslt-devel libxml2-devel  openssl-devel pam-devel krb5-devel  perl perl-devel flex \
-   openldap-devel bison perl-ExtUtils-Embed python python-devel python3 python3-devel readline-devel ncurses-devel lz4 lz4-devel \
-   clang clang-devel libicu libicu-devel libevent-devel libaio-devel libtirpc-devel \
+# yum -y install jemalloc jemalloc-devel make bison zlib-devel bzip2-devel bzip2 libevent libevent-devel e2fsprogs-devel llvm-devel llvm-toolset \
+   libcurl-devel apr-devel libxslt-devel libxml2-devel  openssl-devel pam-devel krb5-devel  perl perl-devel flex docbook-dtds docbook-style-xsl \
+   openldap-devel bison perl-ExtUtils-Embed systemd-devel python2-devel python3-devel readline-devel ncurses-devel lz4 lz4-devel \
+   clang clang-devel libicu libicu-devel libevent-devel libaio-devel libtirpc-devel uuid libuuid libuuid-devel uuid-devel \
    java-1.8.0-openjdk java-1.8.0-openjdk-devel numad numactl-devel nmon wget git iotop dstat perf
 
-Install devtoolset-7
-# yum install devtoolset-7
-source /opt/rh/devtoolset-7/enable
+Install devtoolset-10
+# yum install gcc-toolset-10
+source  /opt/rh/gcc-toolset-10/enable
 # type gcc
-gcc is /opt/rh/devtoolset-7/root/usr/bin/gcc
-# gcc --version 
-gcc (GCC) 7.3.1 20180303 (Red Hat 7.3.1-5)
+gcc is /opt/rh/gcc-toolset-10/root/usr/bin/gcc
+# gcc --version
+gcc (GCC) 10.2.1 20201112 (Red Hat 10.2.1-8)
 
 # tar zxvf postgresql-13.1.tar.gz
 # cd postgresql-13.1

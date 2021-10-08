@@ -6,7 +6,9 @@
 wget -c https://ftp.postgresql.org/pub/source/v11.10/postgresql-11.10.tar.gz --no-check-certificate
 
 ##2. SRC RPM
-wget -c https://yum.postgresql.org/srpms/11/redhat/rhel-7-ppc64le/postgresql11-11.10-1PGDG.rhel7.src.rpm 
+wget -c https://yum.postgresql.org/srpms/11/redhat/rhel-7-ppc64le/postgresql11-11.10-1PGDG.rhel7.src.rpm --no-check-certificate
+wget -c https://yum.postgresql.org/srpms/11/redhat/rhel-8-ppc64le/postgresql11-11.10-2PGDG.rhel8.src.rpm --no-check-certificate
+
 wget -c https://yum.postgresql.org/srpms/11/redhat/rhel-7-ppc64le/postgresql-jdbc-42.2.8-1.rhel7.src.rpm    
 wget -c https://yum.postgresql.org/srpms/11/redhat/rhel-7-ppc64le/postgresql-unit11-7.0-1.rhel7.src.rpm 
 wget -c https://yum.postgresql.org/srpms/11/redhat/rhel-7-ppc64le/postgresql11-odbc-11.01.0000-1PGDG.rhel7.src.rpm 
