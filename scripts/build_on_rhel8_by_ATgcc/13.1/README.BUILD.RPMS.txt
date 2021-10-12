@@ -29,22 +29,14 @@ gcc is /opt/at12.0/bin/gcc
 [root@db1 src]# gcc --version
 gcc (GCC) 8.3.1 20190304 (Advance-Toolchain-at12.0) [revision 269374]
 
-# tar zxvf postgresql-13.2.tar.gz
-# cd postgresql-13.2
-# CC=gcc \
-CXX=g++ \
-CPP=cpp \
-CFLAGS="  -O3 -mcpu=native -mtune=native -mcmodel=large" \
-CXXFLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
-CPPFLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
-LDFLAGS='-ljemalloc ' \
-./configure --prefix=/opt/postgres_at/13.2 \
-     --with-blocksize=8 --with-segsize=1 --with-wal-blocksize=8  \
-     --with-python --with-pam --with-openssl --with-uuid=ossp --with-libxml --with-libxslt \
-2>&1 |tee  config.log
+### Default %{optflags} is not optimized; use native other than power8; define atpath and atstring; pgdg-srpm-macros is not required
+# rpm -Uvh postgresql13-13.2-1PGDG.rhel7.src.rpm
+# cd /root/rpmbuild/SPECS
+# sed -i 's/power8/native/g; s/^%pgdg_set_ppc64le.*//g' postgresql-13.spec
+# sed -i 's/%global prevmajorversion 12/%global pgmajorversion 13\n%global prevmajorversion 12/g' postgresql-13.spec
+# sed -i 's/pgdg-srpm-macros//g' postgresql-13.spec
+# rpmbuild -v -bb postgresql-13.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' --define='atpath /opt/at13.0' --define='atstring at13.0' 2>&1 | tee build.log 
 
-make -j32 && make install
-cd contrib && make  && make install
 
-# cd /opt/postgres_at && tar zcf postgresql13-server-13.2-1PGDG.el8.ppc64le.at15gcc.tar.gz ./13.2
+
 
