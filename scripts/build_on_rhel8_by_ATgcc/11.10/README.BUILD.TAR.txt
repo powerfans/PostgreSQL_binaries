@@ -1,4 +1,4 @@
-Build on K1 Power9 Linux, RedHat 7.6 (Kernel 4.14.0-115.8.1.el7a.ppc64le) with advance-toolchain-at11.0
+Build on K1 Power9 Linux, RedHat 7.6 (Kernel 4.18.0-305.el8.ppc64le) with advance-toolchain-at12.0
 
 ### 1. About Build ENV #########################################################################################
 
@@ -7,7 +7,7 @@ Architecture:          ppc64le
 Model name:            POWER9 (architected), altivec supported
 
 # uname -r
-4.14.0-115.8.1.el7a.ppc64le
+4.18.0-305.el8.ppc64le
 
 # uname -m
 ppc64le
@@ -21,13 +21,13 @@ Install dependencies
    clang clang-devel libicu libicu-devel libevent-devel libaio-devel libtirpc-devel uuid libuuid libuuid-devel uuid-devel \
    java-1.8.0-openjdk java-1.8.0-openjdk-devel numad numactl-devel nmon wget git iotop dstat perf
 
-Install advance-toolchain-at11.0
-# yum install advance-toolchain-at11.0
-# export PATH=/opt/at11.0/bin:$PATH
+Install advance-toolchain-at12.0
+# yum install advance-toolchain-at12.0
+# export PATH=/opt/at12.0/bin:$PATH
 # type gcc
-gcc is /opt/at11.0/bin/gcc
+gcc is /opt/at12.0/bin/gcc
 [root@db1 src]# gcc --version
-gcc (GCC) 7.4.1 20191016 (Advance-Toolchain-at11.0) [revision 277075]
+gcc (GCC) 8.3.1 20190304 (Advance-Toolchain-at12.0) [revision 269374]
 
 # tar zxvf postgresql-11.10.tar.gz
 # cd postgresql-11.10
@@ -39,11 +39,12 @@ CXXFLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
 CPPLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
 LDFLAGS='-ljemalloc ' \
 ./configure --prefix=/opt/postgres_at/11.10 \
-     --with-blocksize=8 --with-segsize=1 --with-wal-blocksize=8 --with-openssl --with-uuid=ossp --with-libxml --with-libxslt \
+     --with-blocksize=8 --with-segsize=1 --with-wal-blocksize=8 \
+     --with-python --with-pam --with-openssl --with-uuid=ossp --with-libxml --with-libxslt \
 2>&1 |tee config.log
 
 make -j32 && make install
 cd contrib && make  && make install
 
-# cd /opt/postgres_at && tar zcf postgresql11-server-11.10-1PGDG.el7a.ppc64le.at11gcc.tar.gz ./11.10
+# cd /opt/postgres_at && tar zcf postgresql11-server-11.10-1PGDG.el8.ppc64le.at12gcc.tar.gz ./11.10
 
