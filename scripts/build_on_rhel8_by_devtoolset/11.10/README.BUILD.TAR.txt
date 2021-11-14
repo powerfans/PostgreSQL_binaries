@@ -1,4 +1,4 @@
-Build on K1 Power9 Linux, RedHat 8.4 (Kernel 4.18.0-305.el8.ppc64le) with devtoolset-10.
+Build on K1 Power9 Linux, RedHat 8.4 (Kernel 4.18.0-305.el8.ppc64le) with devtoolset-9.
 
 ### 1. About Build ENV #########################################################################################
 
@@ -21,13 +21,13 @@ Install dependencies
    clang clang-devel libicu libicu-devel libevent-devel libaio-devel libtirpc-devel uuid libuuid libuuid-devel uuid-devel \
    java-1.8.0-openjdk java-1.8.0-openjdk-devel numad numactl-devel nmon wget git iotop dstat perf
 
-Install devtoolset-10
-# yum install gcc-toolset-10
-source  /opt/rh/gcc-toolset-10/enable
+Install devtoolset-9
+# yum install gcc-toolset-9
+source  /opt/rh/gcc-toolset-9/enable
 # type gcc
-gcc is /opt/rh/gcc-toolset-10/root/usr/bin/gcc
+gcc is /opt/rh/gcc-toolset-9/root/usr/bin/gcc
 # gcc --version 
-gcc (GCC) 10.2.1 20201112 (Red Hat 10.2.1-8)
+gcc (GCC) 9.2.1 20191120 (Red Hat 9.2.1-2)
 
 # tar zxvf postgresql-11.10.tar.gz
 # cd postgresql-11.10
@@ -45,5 +45,4 @@ LDFLAGS='-ljemalloc ' \
 make -j32 && make install
 cd contrib && make  && make install
 
-# cd /opt/postgres
-# tar zcf postgresql11-server-11.10-1PGDG.el8a.ppc64le.tar.gz ./11.10
+# cd /opt/postgres; tar zcf postgresql11-server-11.10-1PGDG.el8a.ppc64le.tar.gz ./11.10
