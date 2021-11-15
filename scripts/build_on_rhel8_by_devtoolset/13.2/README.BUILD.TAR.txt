@@ -1,4 +1,4 @@
-Build on K1 Power9 Linux, RedHat 8.4 (Kernel 4.18.0-305.el8.ppc64le) with devtoolset-10.
+Build on K1 Power9 Linux, RedHat 8.4 (Kernel 4.18.0-305.el8.ppc64le) with devtoolset-9.
 
 ### 1. About Build ENV #########################################################################################
 
@@ -21,16 +21,16 @@ Install dependencies
    clang clang-devel libicu libicu-devel libevent-devel libaio-devel libtirpc-devel uuid libuuid libuuid-devel uuid-devel \
    java-1.8.0-openjdk java-1.8.0-openjdk-devel numad numactl-devel nmon wget git iotop dstat perf
 
-Install devtoolset-10
-# yum install gcc-toolset-10
-source  /opt/rh/gcc-toolset-10/enable
+Install devtoolset-9
+# yum install gcc-toolset-9
+source  /opt/rh/gcc-toolset-9/enable
 # type gcc
-gcc is /opt/rh/gcc-toolset-10/root/usr/bin/gcc
+gcc is /opt/rh/gcc-toolset-9/root/usr/bin/gcc
 # gcc --version
-gcc (GCC) 10.2.1 20201112 (Red Hat 10.2.1-8)
+gcc (GCC) 9.2.1 20191120 (Red Hat 9.2.1-2)
 
-# tar zxvf postgresql-13.1.tar.gz
-# cd postgresql-13.1
+# tar zxvf postgresql-13.2.tar.gz
+# cd postgresql-13.2
 # CC=gcc \
 CXX=g++ \
 CPP=cpp \
@@ -38,12 +38,11 @@ CFLAGS="  -O3 -mcpu=native -mtune=native -mcmodel=large" \
 CXXFLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
 CPPFLAGS="-O3 -mcpu=native -mtune=native -mcmodel=large" \
 LDFLAGS='-ljemalloc ' \
-./configure --prefix=/opt/postgres/13.1 \
+./configure --prefix=/opt/postgres/13.2 \
      --with-blocksize=8 --with-segsize=1 --with-wal-blocksize=8 --with-openssl --with-uuid=ossp --with-libxml --with-libxslt \
 2>&1 |tee  config.log
 
 make -j32 && make install
 cd contrib && make  && make install
 
-# cd /opt/postgres
-# tar zcf postgresql13-server-13.1-1PGDG.el7a.ppc64le.tar.gz ./13.1
+# cd /opt/postgres; tar zcf postgresql13-server-13.2-1PGDG.el8.ppc64le.tar.gz ./13.2

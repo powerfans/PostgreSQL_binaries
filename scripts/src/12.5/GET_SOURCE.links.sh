@@ -14,6 +14,8 @@ wget -c https://yum.postgresql.org/srpms/12/redhat/rhel-7-ppc64le/postgresql12-o
 wget -c https://yum.postgresql.org/srpms/12/redhat/rhel-7-ppc64le/postgresql12-tcl-2.7.4-1.rhel7.src.rpm
 wget -c https://yum.postgresql.org/srpms/12/redhat/rhel-7-ppc64le/citus_12-9.4.1-1.rhel7.src.rpm
 wget -c https://yum.postgresql.org/srpms/12/redhat/rhel-7-ppc64le/pgdg-srpm-macros-1.0.0-1.rhel7.src.rpm
+wget -c https://download.postgresql.org/pub/repos/yum/srpms/12/redhat/rhel-8-ppc64le/citus_12-10.1.0-1.rhel8.src.rpm --no-check-certificate
+wget -c https://download.postgresql.org/pub/repos/yum/srpms/12/redhat/rhel-8-ppc64le/citus_12-10.2.1-1.rhel8.src.rpm --no-check-certificate
 
 
 ## get ALL SRC RPM

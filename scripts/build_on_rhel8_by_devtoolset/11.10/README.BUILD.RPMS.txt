@@ -1,4 +1,4 @@
-Build on K1 Power9 Linux, RedHat 8.4 (Kernel 4.18.0-305.el8.ppc64le) with devtoolset-10.
+Build on K1 Power9 Linux, RedHat 8.4 (Kernel 4.18.0-305.el8.ppc64le) with devtoolset-9.
 
 ### 1. About Build ENV #########################################################################################
 
@@ -21,13 +21,13 @@ Install dependencies
    clang clang-devel libicu libicu-devel libevent-devel libaio-devel libtirpc-devel uuid libuuid libuuid-devel uuid-devel \
    java-1.8.0-openjdk java-1.8.0-openjdk-devel numad numactl-devel nmon wget git iotop dstat perf
 
-Install devtoolset-10
-# yum install gcc-toolset-10
-source  /opt/rh/gcc-toolset-10/enable
+Install devtoolset-9
+# yum install gcc-toolset-9
+source  /opt/rh/gcc-toolset-9/enable
 # type gcc
-gcc is /opt/rh/gcc-toolset-10/root/usr/bin/gcc
+gcc is /opt/rh/gcc-toolset-9/root/usr/bin/gcc
 # gcc --version
-gcc (GCC) 10.2.1 20201112 (Red Hat 10.2.1-8)
+gcc (GCC) 9.2.1 20191120 (Red Hat 9.2.1-2)
 
 ### Default %{optflags} is not optimized.
 # rpm -Uvh postgresql11-11.10-2PGDG.rhel8.src.rpm
@@ -36,7 +36,7 @@ gcc (GCC) 10.2.1 20201112 (Red Hat 10.2.1-8)
 # sed -i 's/%global prevmajorversion 10/%global pgmajorversion 11\n%global prevmajorversion 10/g' postgresql-11.spec
 # sed -i 's/.*advance-toolchain.*//g; s/pgdg-srpm-macros//g' postgresql-11.spec
 # sed -i 's/^%prep/%define _debugsource_template %{nil}\n\n%prep/g' postgresql-11.spec
-# rpmbuild -v -bb postgresql-11.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' --define='devtoolsetpath /opt/rh/gcc-toolset-10/root/usr' 2>&1 | tee build.log
+# rpmbuild -v -bb postgresql-11.spec --define='optflags -O3 -mcpu=native -mtune=native -mcmodel=large' --define='devtoolsetpath /opt/rh/gcc-toolset-9/root/usr' 2>&1 | tee build.log
 
 # cd /root/rpmbuild/RPMS/ppc64le; tar zcf postgresql11-11.10-1PGDG.el8a.ppc64le_RPMS.tar.gz *.rpm
 
