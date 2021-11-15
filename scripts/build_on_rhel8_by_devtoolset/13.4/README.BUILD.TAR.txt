@@ -45,4 +45,4 @@ LDFLAGS='-ljemalloc ' \
 make -j32 && make install
 cd contrib && make  && make install
 
-# cd /opt/postgres; tar zcf postgresql13-server-13.4-1PGDG.el7a.ppc64le.tar.gz ./13.4
+# cd /opt/postgres; tar zcf postgresql13-server-13.4-1PGDG.el8a.ppc64le.tar.gz ./13.4
