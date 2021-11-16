@@ -14,7 +14,7 @@ Based on PostgreSQL Community Source，build and verify  tarball/ RPM binaries f
 * [scripts/build_on_rhel8_by_devtoolset/13.4/README.BUILD.RPMS.txt](https://github.com/DBres4Power/PostgreSQL_binaries/blob/main/scripts/build_on_rhel8_by_devtoolset/13.4/README.BUILD.RPMS.txt) 在Redhat 8环境，采用devtoolset gcc编译PostgreSQL 13.4二进制RPM包的过程
 
 * [scripts/build_on_rhel8_by_devtoolset/13.4/README.BUILD.TAR.txt](https://github.com/DBres4Power/PostgreSQL_binaries/blob/main/scripts/build_on_rhel8_by_devtoolset/13.4/README.BUILD.TAR.txt) 在Redhat 8环境，采用devtoolset gcc编译PostgreSQL 13.4二进制TAR包的过程
-* 
+ 
 * [Releases/Tags build_on_rhel7_by_devtoolset](https://github.com/DBres4Power/PostgreSQL_binaries/releases/tag/v12.5_built_on_rhel7_by_devtoolset) 提供在RedHat/CentOS 7下采用devtoolset gcc编译好的PostgreSQL 12.5二进制RPM与TARBALL 软件包
 
 * [Releases/Tags PostgreSQL_13.4_built_on_RedHat_8_by_gcc_toolset_9](https://github.com/DBres4Power/PostgreSQL_binaries/releases/tag/PostgreSQL_13.4_built_on_RedHat_8_by_gcc_toolset_9) 提供在RedHat/CentOS 8下采用devtoolset-9 gcc编译好的PostgreSQL 13.4二进制RPM与TARBALL 软件包
