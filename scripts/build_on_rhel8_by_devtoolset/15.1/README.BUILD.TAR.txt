@@ -1,4 +1,4 @@
-Build on K1 Power9 Linux, RedHat 8.4 (4.18.0-305.el8.ppc64le) with devtoolset-9.
+Build on K1 Power9 Linux, RedHat 8.4 (4.18.0-305.el8.ppc64le) with gcc-toolset-9.
 
 ### 1. About Build ENV #########################################################################################
 
@@ -21,11 +21,11 @@ Install dependencies
    clang clang-devel libicu libicu-devel libevent-devel tcl tcl-devel libaio-devel libtirpc-devel uuid libuuid libuuid-devel uuid-devel \
    java-1.8.0-openjdk java-1.8.0-openjdk-devel numad numactl-devel nmon wget git iotop dstat perf
 
-Install devtoolset-9
-# yum install devtoolset-9
-source /opt/rh/devtoolset-9/enable
+Install gcc-toolset-9
+# yum install gcc-toolset-9
+source /opt/rh/gcc-toolset-9/enable
 # type gcc
-gcc is /opt/rh/devtoolset-9/root/usr/bin/gcc
+gcc is /opt/rh/gcc-toolset-9/root/usr/bin/gcc
 # gcc --version 
 gcc (GCC) 9.2.1 20191120 (Red Hat 9.2.1-2)
 
